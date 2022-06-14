@@ -16,7 +16,7 @@ function useTornPaper(props) {
 
     for (let i = 0; i < amountOfPoints; i++) {
       const path = ((100 / amountOfPoints) * i).toFixed(0);
-      const torn = (Math.random() * multiplier).toFixed(0);
+      const torn = Math.random() * multiplier;
 
       if (side === "top") {
         if (isTorn) {
