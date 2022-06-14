@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .bg-grid-pattern {
+    background-image: url("./assets/grid-pattern.webp");
+    background-repeat: repeat;
+  }
+}
+
+html,
+body,
+#root {
+  @apply bg-slate-100 text-slate-900 w-full h-screen lg:overflow-hidden container;
+  font-family: "Mali", cursive;
+}
