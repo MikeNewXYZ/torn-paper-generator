@@ -5,15 +5,17 @@
 @tailwind utilities;
 
 @layer utilities {
-  .bg-grid-pattern {
-    background-image: url("./assets/grid-pattern.webp");
-    background-repeat: repeat;
+  .shadow-paper {
+    filter: drop-shadow(0px 0px 10px rgb(0 0 0 / 50%));
   }
 }
 
 html,
 body,
 #root {
-  @apply bg-slate-100 text-slate-900 w-full h-screen lg:overflow-hidden container;
+  @apply text-slate-900 w-full h-screen overflow-hidden;
   font-family: "Mali", cursive;
+  background-image: url("./assets/wood-texture.jpg");
+  background-position: center;
+  background-size: cover;
 }
