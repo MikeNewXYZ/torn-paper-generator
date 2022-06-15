@@ -14,6 +14,10 @@ const Paper = tw.div`
   h-full
   p-2
   md:p-4
+  flex
+  flex-col
+  gap-2
+  md:gap-4
 `;
 
 function PaperPlatform({children, ...rest}) {

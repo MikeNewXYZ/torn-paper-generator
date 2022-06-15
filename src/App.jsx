@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import tw from "tailwind-styled-components";
 import {useTornPaper} from "@/Hooks";
-import {PaperPlatform, ResultsPaper} from "@/Components";
+import {PaperPlatform, ResultsPaper, CopyStyles} from "@/Components";
 
 const Container = tw.main`
   container
@@ -22,8 +22,8 @@ const ResultsArea = tw.div`
   w-full
   h-full
   p-0
-  sm:p-6
-  md:p-10
+  sm:p-2
+  md:p-4
 `;
 
 const OptionsArea = tw.div`
@@ -32,6 +32,7 @@ const OptionsArea = tw.div`
   flex-1
   w-full
   h-full
+  overflow-hidden
 `;
 
 function App() {
@@ -41,8 +42,6 @@ function App() {
     multiplier: 1,
     sides: {top: true, right: true, bottom: true, left: true},
   });
-
-  console.log(copyStyles);
 
   useEffect(() => {
     generateStyles();
@@ -68,6 +67,7 @@ function App() {
             <ResultsPaper innerRef={ref} onClick={handleResultsPaperClick} />
           </ResultsArea>
         </Flex>
+        <CopyStyles cssStyle={copyStyles} />
       </PaperPlatform>
     </Container>
   );
