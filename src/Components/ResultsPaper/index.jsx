@@ -1,7 +1,8 @@
 import {useState, useRef} from "react";
 import tw from "tailwind-styled-components";
-import linedPaperPattern from "@/Assets/lined-paper-pattern.png";
 import {ArrowsClockwise} from "phosphor-react";
+import linedPaperPattern from "@/Assets/lined-paper-pattern.png";
+import {WigglyEffect} from "@/Components";
 
 const Wrapper = tw.div`
   drop-shadow-md
@@ -99,14 +100,16 @@ function ResultsPaper({
         ref={innerRef}
         style={{backgroundImage: `url(${linedPaperPattern})`}}
       >
-        <Overlay>
-          <RefreshIcon
-            ref={refreshIconRef}
-            $hide={!hover}
-            style={{transform: "rotate(0deg)"}}
-          />
-          <OverlayHeading $hide={!hover}>Regenerate</OverlayHeading>
-        </Overlay>
+        <WigglyEffect feDisplacementMap={{scale: 5}}>
+          <Overlay>
+            <RefreshIcon
+              ref={refreshIconRef}
+              $hide={!hover}
+              style={{transform: "rotate(0deg)"}}
+            />
+            <OverlayHeading $hide={!hover}>Regenerate</OverlayHeading>
+          </Overlay>
+        </WigglyEffect>
       </Paper>
     </Wrapper>
   );
