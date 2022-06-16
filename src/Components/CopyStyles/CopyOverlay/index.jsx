@@ -2,34 +2,7 @@ import * as ReactDOM from "react-dom";
 import tw from "tailwind-styled-components";
 import {ClipboardText} from "phosphor-react";
 import {isMobile} from "react-device-detect";
-import stardustPattern from "@/Assets/stardust-pattern.png";
-import {WigglyEffect} from "@/Components";
-
-const Wrapper = tw.div`
-  fixed
-  inset-0
-  w-full
-  h-screen
-  z-50
-  flex
-  justify-center
-  items-center
-  ${(p) => {
-    return isMobile && p.$show ? "pointer-events-auto" : "pointer-events-none";
-  }}
-  ${(p) => (p.$show ? "opacity-100" : "opacity-0")}
-  transition-opacity
-  duration-500
-`;
-
-const Background = tw.div`
-  absolute
-  inset-0
-  w-full
-  h-full
-  bg-repeat
-  opacity-75
-`;
+import {WigglyEffect, Modal} from "@/Components";
 
 const ContentWrapper = tw.div`
   flex
@@ -61,17 +34,18 @@ const Heading = tw.h1`
 
 function CopyOverlay({show, copied, ...rest}) {
   return ReactDOM.createPortal(
-    <>
-      <Wrapper $show={show} {...rest}>
-        <Background style={{backgroundImage: `url(${stardustPattern})`}} />
-        <WigglyEffect>
-          <ContentWrapper $show={show}>
-            <CopyIcon />
-            <Heading>{copied ? "Success!" : "Click to Copy!"}</Heading>
-          </ContentWrapper>
-        </WigglyEffect>
-      </Wrapper>
-    </>,
+    <Modal
+      show={show}
+      {...rest}
+      style={{pointerEvents: isMobile && show ? "auto" : "none"}}
+    >
+      <WigglyEffect>
+        <ContentWrapper $show={show}>
+          <CopyIcon />
+          <Heading>{copied ? "Success!" : "Click to Copy!"}</Heading>
+        </ContentWrapper>
+      </WigglyEffect>
+    </Modal>,
     document.getElementById("root")
   );
 }

@@ -16,7 +16,8 @@ const Wrapper = tw(CopyToClipboard)`
 `;
 
 const Code = tw.code`
-  block
+  flex
+  items-center
   truncate
   text-lg
   md:text-xl
