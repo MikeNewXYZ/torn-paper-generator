@@ -38,7 +38,6 @@ const Overlay = tw.div`
   lg:hover:opacity-100
   lg:translate-y-5
   lg:hover:translate-y-0
-  active:scale-90
   transition-all
   duration-500
 `;
