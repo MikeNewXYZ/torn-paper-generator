@@ -1,7 +1,7 @@
 import {useState} from "react";
 import tw from "tailwind-styled-components";
 import {CopyToClipboard} from "react-copy-to-clipboard";
-import paperPatter from "@/Assets/paper-pattern.png";
+import paperPattern from "@/Assets/paper-pattern.png";
 import CopyOverlay from "./CopyOverlay";
 
 const Wrapper = tw(CopyToClipboard)`
@@ -53,7 +53,9 @@ function CopyStyles({cssStyle}) {
         onMouseLeave={handleMouseLeave}
         onCopy={handleCopy}
       >
-        <Code style={{backgroundImage: `url(${paperPatter})`}}>{cssStyle}</Code>
+        <Code style={{backgroundImage: `url(${paperPattern})`}}>
+          {cssStyle}
+        </Code>
       </Wrapper>
       <CopyOverlay show={showOverlay} copied={copied} />
     </>
