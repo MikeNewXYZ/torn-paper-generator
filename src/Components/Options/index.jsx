@@ -1,6 +1,6 @@
 import {useId} from "react";
 import tw from "tailwind-styled-components";
-import AdSense from "react-adsense";
+import {Adsense} from "@ctrl/react-adsense";
 
 const Wrapper = tw.div`
   flex
@@ -48,6 +48,7 @@ const AdvertWrapper = tw.div`
   w-full
   flex-shrink-0
   h-32
+  overflow-hidden
 `;
 
 function Options({options, setOptions, ...rest}) {
@@ -158,13 +159,12 @@ function Options({options, setOptions, ...rest}) {
           </CheckboxWrapper>
         </OptionsWrapper>
       </Form>
-      <AdvertWrapper>
-        <AdSense.Google
+      <AdvertWrapper style={{maxHeight: "8rem"}}>
+        <Adsense
           client="ca-pub-4798866127328745"
           slot="9059795233"
-          format="auto"
-          responsive="true"
-          style={{display: "block"}}
+          format="fluid"
+          style={{display: "block", width: "100%", height: "100%"}}
         />
       </AdvertWrapper>
     </Wrapper>
