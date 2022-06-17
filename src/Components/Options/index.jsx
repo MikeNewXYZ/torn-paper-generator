@@ -45,9 +45,7 @@ const CheckboxWrapper = tw.div`
 
 const AdvertWrapper = tw.div`
   w-full
-  h-24
   flex-shrink-0
-  bg-red-500
 `;
 
 function Options({options, setOptions, ...rest}) {
