@@ -1,5 +1,6 @@
 import {useId} from "react";
 import tw from "tailwind-styled-components";
+import AdSense from "react-adsense";
 
 const Wrapper = tw.div`
   flex
@@ -46,6 +47,7 @@ const CheckboxWrapper = tw.div`
 const AdvertWrapper = tw.div`
   w-full
   flex-shrink-0
+  h-32
 `;
 
 function Options({options, setOptions, ...rest}) {
@@ -157,20 +159,13 @@ function Options({options, setOptions, ...rest}) {
         </OptionsWrapper>
       </Form>
       <AdvertWrapper>
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4798866127328745"
-          crossorigin="anonymous"
-        ></script>
-        <ins
-          class="adsbygoogle"
-          style="display:block"
-          data-ad-client="ca-pub-4798866127328745"
-          data-ad-slot="9059795233"
-          data-ad-format="auto"
-          data-full-width-responsive="true"
-        ></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        <AdSense.Google
+          client="ca-pub-4798866127328745"
+          slot="9059795233"
+          format="auto"
+          responsive="true"
+          style={{display: "block"}}
+        />
       </AdvertWrapper>
     </Wrapper>
   );
