@@ -156,7 +156,22 @@ function Options({options, setOptions, ...rest}) {
           </CheckboxWrapper>
         </OptionsWrapper>
       </Form>
-      <AdvertWrapper></AdvertWrapper>
+      <AdvertWrapper>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4798866127328745"
+          crossorigin="anonymous"
+        ></script>
+        <ins
+          class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-4798866127328745"
+          data-ad-slot="9059795233"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        ></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </AdvertWrapper>
     </Wrapper>
   );
 }
