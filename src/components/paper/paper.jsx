@@ -48,7 +48,7 @@ export default function Paper({ children }) {
 		>
 			<div
 				ref={paperRef}
-				className="w-full h-full bg-base-100 transition-transform duration-500 ease-out"
+				className="w-full h-full bg-base-100 transition-transform duration-500 ease-out select-none"
 				style={{ background: `url(${linedPaperPapper})` }}
 				onMouseMove={handleMouseMove}
 				onMouseOut={handleMouseOut}
