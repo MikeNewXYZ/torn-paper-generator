@@ -43,12 +43,12 @@ export default function Paper({ children }) {
 	return (
 		<div
 			ref={containerRef}
-			className="h-full w-full aspect-auto md:w-auto md:aspect-[9/10] drop-shadow-md"
-			style={{ perspective: "1000px" }}
+			className="w-full sm:w-[30rem] landscape:h-full md:landscape:h-fit overflow-x-visible drop-shadow-md"
+			style={{ perspective: "1000px", overflowY: isMobile() ? "auto" : "visible" }}
 		>
 			<div
 				ref={paperRef}
-				className="w-full h-full bg-base-100 transition-transform duration-500 ease-out select-none"
+				className="w-full bg-base-100 transition-transform duration-500 ease-out select-none"
 				style={{ background: `url(${linedPaperPapper})` }}
 				onMouseMove={handleMouseMove}
 				onMouseOut={handleMouseOut}
