@@ -13,7 +13,7 @@ export default function Paper({ children }) {
 		>
 			<div
 				ref={innerRef}
-				className="w-full bg-base-100 transition-transform duration-500 ease-out select-none paper"
+				className="w-full bg-base-100 transition-transform duration-500 ease-out select-none torn-paper"
 				style={{ background: `url(${linedPaperPapper})` }}
 			>
 				{children}
