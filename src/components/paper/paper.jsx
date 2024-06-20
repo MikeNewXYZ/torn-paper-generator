@@ -2,7 +2,7 @@ import isMobile from "is-mobile";
 import linedPaperPapper from "../../assets/lined-paper-pattern.png";
 import useFloatingCard from "../../hooks/useFloatingCard/useFloatingCard";
 
-export default function Paper({ children }) {
+export default function Paper({ clipPath, children }) {
 	const { outerRef, innerRef } = useFloatingCard();
 
 	return (
@@ -13,8 +13,11 @@ export default function Paper({ children }) {
 		>
 			<div
 				ref={innerRef}
-				className="w-full bg-base-100 transition-transform duration-500 ease-out select-none torn-paper"
-				style={{ background: `url(${linedPaperPapper})` }}
+				className="w-full bg-base-100 transition-transform duration-500 ease-out select-none"
+				style={{
+					background: `url(${linedPaperPapper})`,
+					clipPath: clipPath,
+				}}
 			>
 				{children}
 			</div>
