@@ -23,9 +23,9 @@ function Range({ title = "", value, onChange, ...props }) {
 				{title} ({value})
 			</span>
 			<input
-				{...props}
 				min={0}
 				max={100}
+				{...props}
 				value={value}
 				onChange={onChange}
 				type="range"
@@ -81,6 +81,9 @@ export default function Options({ handleOptions, options, handleCopyStyles, hand
 			<Range
 				title="Roughness"
 				name="roughness"
+				min={0}
+				max={5}
+				step={0.1}
 				onChange={handleOptions}
 				value={options.roughness}
 			/>

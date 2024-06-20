@@ -10,7 +10,7 @@ export default function App() {
 		leftSide: true,
 		rightSide: true,
 		amountOfPoints: 50,
-		roughness: 50,
+		roughness: 1,
 	});
 
 	const handleOptions = useCallback((e) => {
@@ -18,7 +18,7 @@ export default function App() {
 
 		setOptionValues((prev) => ({
 			...prev,
-			[name]: type === "checkbox" ? checked : parseInt(value),
+			[name]: type === "checkbox" ? checked : parseFloat(value),
 		}));
 	}, []);
 
