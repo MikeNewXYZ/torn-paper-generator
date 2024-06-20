@@ -38,11 +38,14 @@ export default function App() {
 		e.preventDefault();
 	}, []);
 
-	const handleRefresh = useCallback((e) => {
-		e.preventDefault();
-		setNewClipPath();
+	const handleRefresh = useCallback(
+		(e) => {
+			e.preventDefault();
+			setNewClipPath();
+		},
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
+		[optionValues],
+	);
 
 	return (
 		<main className="w-full h-full flex justify-center items-center pt-2 pb-2 md:landscape:pb-4 px-2">
