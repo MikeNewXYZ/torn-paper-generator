@@ -1,4 +1,5 @@
 import daisyui from "daisyui";
+import tailwindCssAnimated from "tailwindcss-animated";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -9,5 +10,5 @@ export default {
 	daisyui: {
 		themes: ["wireframe"],
 	},
-	plugins: [daisyui],
+	plugins: [daisyui, tailwindCssAnimated],
 };

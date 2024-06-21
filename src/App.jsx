@@ -68,7 +68,11 @@ export default function App() {
 				<div className="w-full h-full px-4 pb-4 pt-3 flex flex-col text-xs sm:text-base overflow-y-auto">
 					<div className="flex justify-between mb-8">
 						<h1>Torn Paper Generator</h1>
-						<a className="text-right" href="https://MikeNew.XYZ" target="_blank">
+						<a
+							className="text-right animate-jump animate-once animate-duration-[750ms] animate-delay-[2000ms]"
+							href="https://MikeNew.XYZ"
+							target="_blank"
+						>
 							By MikeNewXYZ
 						</a>
 					</div>

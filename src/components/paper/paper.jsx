@@ -8,7 +8,7 @@ export default function Paper({ clipPath, children }) {
 	return (
 		<div
 			ref={outerRef}
-			className="w-full sm:w-[30rem] landscape:h-full md:landscape:h-fit overflow-x-visible drop-shadow-md"
+			className="w-full sm:w-[30rem] landscape:h-full md:landscape:h-fit overflow-x-visible drop-shadow-md animate-fade-up"
 			style={{ overflowY: isMobile() ? "auto" : "visible" }}
 		>
 			<div
