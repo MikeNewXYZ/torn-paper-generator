@@ -3,8 +3,12 @@ import { useCallback, useEffect, useState } from "react";
 import Paper from "./components/paper/paper";
 import Options from "./components/options/options";
 import tornPaper from "./lib/tornPaper/tornPaper";
+import JSConfetti from "js-confetti";
+
+const jsConfetti = new JSConfetti();
 
 export default function App() {
+	// State to manage options for clip path styles.
 	const [optionValues, setOptionValues] = useState({
 		topSide: true,
 		bottomSide: true,
@@ -14,17 +18,21 @@ export default function App() {
 		roughness: 1,
 	});
 
+	// State to manage the clip path css style.
 	const [clipPath, setClipPath] = useState("");
 
+	// Function to generate a new clip path based on the current options.
 	const setNewClipPath = useCallback(() => {
 		setClipPath(tornPaper(optionValues));
 	}, [optionValues]);
 
+	// Effect to update the clip path whenever options change.
 	useEffect(() => {
 		setNewClipPath();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [optionValues]);
 
+	// Handler to update option values based on user input.
 	const handleOptions = useCallback((e) => {
 		const { type, checked, value, name } = e.target;
 
@@ -34,10 +42,17 @@ export default function App() {
 		}));
 	}, []);
 
-	const handleCopyStyles = useCallback((e) => {
-		e.preventDefault();
-	}, []);
+	// Handler to copy the clip path styles to clipboard.
+	const handleCopyStyles = useCallback(
+		(e) => {
+			e.preventDefault();
+			navigator.clipboard.writeText(`clip-path: ${clipPath};`);
+			jsConfetti.addConfetti();
+		},
+		[clipPath],
+	);
 
+	// Handler to refresh and generate a new clip path.
 	const handleRefresh = useCallback(
 		(e) => {
 			e.preventDefault();
@@ -53,7 +68,9 @@ export default function App() {
 				<div className="w-full h-full px-4 pb-4 pt-3 flex flex-col text-xs sm:text-base overflow-y-auto">
 					<div className="flex justify-between mb-8">
 						<h1>Torn Paper Generator</h1>
-						<p className="text-right">By MikeNewXYZ</p>
+						<a className="text-right" href="https://MikeNew.XYZ" target="_blank">
+							By MikeNewXYZ
+						</a>
 					</div>
 
 					<Options
