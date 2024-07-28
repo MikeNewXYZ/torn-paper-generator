@@ -1,0 +1,7 @@
+version: "3"
+services:
+  app:
+    image: mikenewxyz/torn-paper-generator:1.0
+    restart: unless-stopped
+    ports:
+      - "3000:80"
